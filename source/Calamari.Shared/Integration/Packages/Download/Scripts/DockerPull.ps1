@@ -19,8 +19,39 @@
 
     return $LASTEXITCODE -eq 0
 } 
-
-
+ 
+ function GetCachedWorkerToolsImageDigests {
+     $digests = docker image ls --format '{{.Digest}}' octopusdeploy/worker-tools
+     return $digests
+ }
+ 
+ function GetSelectedWorkerToolsImageDigests {
+     $separatorPosition = $IMAGE.LastIndexOf(':')
+     $tag = if ($separatorPosition -gt 0) { $IMAGE.Substring($separatorPosition + 1) } else { 'latest' }
+     $uri = "https://hub.docker.com/v2/repositories/octopusdeploy/worker-tools/tags/$tag"
+     
+     try {
+         $imageInformation = (Invoke-WebRequest -URI $uri).Content | ConvertFrom-Json
+         $digests = $imageInformation.Images | ForEach-Object {$_.Digest}
+     } catch {
+         $digests = @()
+     }
+     
+     return $digests
+ }
+ 
+ function VerifyWorkerToolsImageBeingCached {
+     $cachedImageDigests = GetCachedWorkerToolsImageDigests
+     $selectedImageDigests = GetSelectedWorkerToolsImageDigests
+     
+     $cached = $selectedImageDigests | Where-Object { $cachedImageDigests -contains $_ } 
+     
+     if ($cached.Length -eq 0) {
+         Write-Warning "The worker tool image '$IMAGE' is not cached, pulling may take a while"
+     }
+ }
+ 
+ 
 $IMAGE=$OctopusParameters["Image"]
 $dockerUsername=$OctopusParameters["DockerUsername"]
 $dockerPassword=$OctopusParameters["DockerPassword"]
@@ -51,5 +82,9 @@ if (-not ([string]::IsNullOrEmpty($dockerUsername))) {
     }
 }
 
+ if ($IMAGE.StartsWith("octopusdeploy/worker-tools", "InvariantCultureIgnoreCase")) {
+     VerifyWorkerToolsImageBeingCached
+ }
+ 
 Write-Verbose "docker pull $IMAGE"
 docker pull $IMAGE
