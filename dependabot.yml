@@ -1,0 +1,137 @@
+verison: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/source/Calamari"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+  
+  - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Aws"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Azure"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureAppService"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureCloudService"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureResourceGroup"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureScripting"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureServiceFabric"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.AzureWebApp"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.CloudAccounts"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Common"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.ConsolidateCalamariPackages"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.GoogleCloudScripting"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Scripting"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Shared"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Terraform"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
+
+    - package-ecosystem: "nuget"
+    directory: "/source/Calamari.Testing"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 5
